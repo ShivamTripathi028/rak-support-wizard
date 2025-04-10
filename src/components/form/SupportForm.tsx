@@ -4,7 +4,6 @@ import { useSupportForm } from "@/context/SupportFormContext";
 import ClientInfoStep from "./ClientInfoStep";
 import DeviceInfoStep from "./DeviceInfoStep";
 import IssueDescriptionStep from "./IssueDescriptionStep";
-import SupportRequestStep from "./SupportRequestStep";
 import ReviewStep from "./ReviewStep";
 import ConfirmationStep from "./ConfirmationStep";
 import FormProgressBar from "./FormProgressBar";
@@ -20,8 +19,6 @@ const SupportForm = () => {
         return <DeviceInfoStep />;
       case "issueDescription":
         return <IssueDescriptionStep />;
-      case "supportRequest":
-        return <SupportRequestStep />;
       case "review":
         return <ReviewStep />;
       case "confirmation":

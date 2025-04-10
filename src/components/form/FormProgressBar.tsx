@@ -30,14 +30,9 @@ const FormProgressBar = () => {
       icon: <div className="w-5 h-5 text-xs flex items-center justify-center">3</div>,
     },
     {
-      label: "Support",
-      value: "supportRequest",
-      icon: <div className="w-5 h-5 text-xs flex items-center justify-center">4</div>,
-    },
-    {
       label: "Review",
       value: "review",
-      icon: <div className="w-5 h-5 text-xs flex items-center justify-center">5</div>,
+      icon: <div className="w-5 h-5 text-xs flex items-center justify-center">4</div>,
     },
   ];
 
@@ -58,11 +53,6 @@ const FormProgressBar = () => {
     
     // Issue step requires issue description
     if (stepIndex >= 3 && (!formData.issueDescription)) {
-      return false;
-    }
-    
-    // Support step requires privacy agreement
-    if (stepIndex >= 4 && (!formData.privacyAgreed)) {
       return false;
     }
     

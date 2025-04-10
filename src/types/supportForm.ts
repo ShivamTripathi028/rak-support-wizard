@@ -20,13 +20,14 @@ export interface SupportFormData {
   
   // Device Information
   deviceModel: string;
-  serialNumber: string;
+  serialNumber: string;  // This will store the EUI Number
   firmwareVersion?: string;
   
   // Issue Description
   problemType: ProblemType;
   issueDescription: string;
   errorMessage?: string;
+  errorScreenshots?: File[];
   stepsToReproduce?: string;
   
   // Support Request
@@ -44,6 +45,5 @@ export type FormStep =
   | 'clientInfo'
   | 'deviceInfo'
   | 'issueDescription'
-  | 'supportRequest'
   | 'review'
   | 'confirmation';

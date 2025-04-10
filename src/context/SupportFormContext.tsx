@@ -13,19 +13,21 @@ interface SupportFormContextType {
   submitForm: () => Promise<void>;
   isSubmitting: boolean;
   stepProgress: number;
+  downloadSummary: () => void;
 }
 
 const defaultFormData: SupportFormData = {
   name: "",
-  company: "",  // Ensure this is initialized
+  company: "",
   email: "",
   phone: "",
   deviceModel: "",
-  serialNumber: "",
+  serialNumber: "",  // This will store the EUI Number
   firmwareVersion: "",
   problemType: "connectivity",
   issueDescription: "",
   errorMessage: "",
+  errorScreenshots: [],
   stepsToReproduce: "",
   supportMethod: "email",
   urgencyLevel: "medium",
@@ -37,7 +39,6 @@ const steps: FormStep[] = [
   "clientInfo",
   "deviceInfo",
   "issueDescription",
-  "supportRequest",
   "review",
   "confirmation"
 ];
@@ -104,6 +105,19 @@ export const SupportFormProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
+  // Function to download form data as JSON
+  const downloadSummary = () => {
+    const dataStr = JSON.stringify(formData, null, 2);
+    const dataUri = `data:application/json;charset=utf-8,${encodeURIComponent(dataStr)}`;
+    
+    const exportName = `support-request-${new Date().toISOString().slice(0, 10)}`;
+    
+    const linkElement = document.createElement("a");
+    linkElement.setAttribute("href", dataUri);
+    linkElement.setAttribute("download", `${exportName}.json`);
+    linkElement.click();
+  };
+
   return (
     <SupportFormContext.Provider
       value={{
@@ -115,7 +129,8 @@ export const SupportFormProvider = ({ children }: { children: ReactNode }) => {
         goToStep,
         submitForm,
         isSubmitting,
-        stepProgress
+        stepProgress,
+        downloadSummary
       }}
     >
       {children}
