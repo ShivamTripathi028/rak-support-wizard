@@ -4,7 +4,7 @@ import { useSupportForm } from "@/context/SupportFormContext";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { AtSign, User, Phone } from "lucide-react";
+import { AtSign, User, Phone, Building2 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const ClientInfoStep = () => {
@@ -40,6 +40,19 @@ const ClientInfoStep = () => {
                 onChange={(e) => updateFormData({ name: e.target.value })}
                 className="border-support-light-blue focus:border-support-blue"
                 required
+              />
+            </div>
+            
+            <div className="space-y-2">
+              <Label htmlFor="company" className="flex items-center gap-2">
+                <Building2 className="h-4 w-4" /> Company Name <span className="text-gray-400">(Optional)</span>
+              </Label>
+              <Input
+                id="company"
+                placeholder="Company Name"
+                value={formData.company || ''}
+                onChange={(e) => updateFormData({ company: e.target.value })}
+                className="border-support-light-blue focus:border-support-blue"
               />
             </div>
             

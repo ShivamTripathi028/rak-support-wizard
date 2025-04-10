@@ -35,14 +35,9 @@ const FormProgressBar = () => {
       icon: <div className="w-5 h-5 text-xs flex items-center justify-center">4</div>,
     },
     {
-      label: "Files",
-      value: "fileUpload",
-      icon: <div className="w-5 h-5 text-xs flex items-center justify-center">5</div>,
-    },
-    {
       label: "Review",
       value: "review",
-      icon: <div className="w-5 h-5 text-xs flex items-center justify-center">6</div>,
+      icon: <div className="w-5 h-5 text-xs flex items-center justify-center">5</div>,
     },
   ];
 

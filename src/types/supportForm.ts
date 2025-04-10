@@ -14,13 +14,14 @@ export type SupportMethod = 'email' | 'phone' | 'remote';
 export interface SupportFormData {
   // Client Information
   name: string;
+  company?: string;
   email: string;
   phone?: string;
   
   // Device Information
   deviceModel: string;
   serialNumber: string;
-  firmwareVersion: string;
+  firmwareVersion?: string;
   
   // Issue Description
   problemType: ProblemType;
@@ -44,6 +45,5 @@ export type FormStep =
   | 'deviceInfo'
   | 'issueDescription'
   | 'supportRequest'
-  | 'fileUpload'
   | 'review'
   | 'confirmation';

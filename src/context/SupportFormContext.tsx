@@ -17,6 +17,7 @@ interface SupportFormContextType {
 
 const defaultFormData: SupportFormData = {
   name: "",
+  company: "",
   email: "",
   phone: "",
   deviceModel: "",
@@ -37,7 +38,6 @@ const steps: FormStep[] = [
   "deviceInfo",
   "issueDescription",
   "supportRequest",
-  "fileUpload", 
   "review",
   "confirmation"
 ];

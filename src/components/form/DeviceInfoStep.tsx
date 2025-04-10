@@ -56,22 +56,22 @@ const DeviceInfoStep = () => {
             
             <div className="space-y-2">
               <Label htmlFor="serialNumber" className="flex items-center gap-2">
-                <Hash className="h-4 w-4" /> Device Serial Number <span className="text-red-500">*</span>
+                <Hash className="h-4 w-4" /> Device EUI Number <span className="text-red-500">*</span>
               </Label>
               <Input
                 id="serialNumber"
-                placeholder="e.g. RAK12345678"
+                placeholder="e.g. ACxxxxxxxxxxxxxxxx"
                 value={formData.serialNumber}
                 onChange={(e) => updateFormData({ serialNumber: e.target.value })}
                 className="border-support-light-blue focus:border-support-blue"
                 required
               />
-              <p className="text-xs text-gray-500">The serial number can be found on the device label or in the device settings</p>
+              <p className="text-xs text-gray-500">The EUI number can be found on the device label or in the device settings</p>
             </div>
             
             <div className="space-y-2">
               <Label htmlFor="firmwareVersion" className="flex items-center gap-2">
-                <Activity className="h-4 w-4" /> Firmware Version <span className="text-red-500">*</span>
+                <Activity className="h-4 w-4" /> Firmware Version <span className="text-gray-400">(Optional)</span>
               </Label>
               <Input
                 id="firmwareVersion"
@@ -79,7 +79,6 @@ const DeviceInfoStep = () => {
                 value={formData.firmwareVersion}
                 onChange={(e) => updateFormData({ firmwareVersion: e.target.value })}
                 className="border-support-light-blue focus:border-support-blue"
-                required
               />
             </div>
           </div>
