@@ -81,7 +81,7 @@ const ClientInfoStep = () => {
               <Input
                 id="phone"
                 placeholder="+1 (123) 456-7890"
-                value={formData.phone}
+                value={formData.phone || ''}
                 onChange={(e) => updateFormData({ phone: e.target.value })}
                 className="border-support-light-blue focus:border-support-blue"
               />

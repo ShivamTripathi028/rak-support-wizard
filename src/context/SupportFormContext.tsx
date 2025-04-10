@@ -17,7 +17,7 @@ interface SupportFormContextType {
 
 const defaultFormData: SupportFormData = {
   name: "",
-  company: "",
+  company: "",  // Ensure this is initialized
   email: "",
   phone: "",
   deviceModel: "",
